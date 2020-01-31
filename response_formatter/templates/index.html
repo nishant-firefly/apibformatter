@@ -1,1 +1,27 @@
-<pre>{{data}}</pre>
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+{% for hub,groups in data.items %}
+# {{hub|title}}
+    {% for group,resources in groups.items %}
+## Group {{group|title}}
+        {%for resource,url_actions in resources.items %}
+### {{resource}} [{{url_actions.url}}]
+            {% for action in url_actions.actions %}
+#### {{action.name}} for {{group}} [{{action.request_method}}]
++ {{action.request_header_status}}
+
+{{action.request_data}}
+
++ {{action.response_header_status}}
+
+{{action.response_data}}
+
+
+            {% endfor %}
+        {% endfor %}
+    {%endfor%}
+{% endfor %}
+
+
+
