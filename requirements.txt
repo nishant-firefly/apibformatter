@@ -1,0 +1,2 @@
+django-json-widget==1.0.0
+jsonformatter==0.1.3
