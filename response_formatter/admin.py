@@ -24,7 +24,7 @@ class GroupAdmin(admin.ModelAdmin):
 class ResourceAdmin(admin.ModelAdmin):
     fields = list_display = ["name","url","group"]
 class ActionAdmin(admin.ModelAdmin):
-    fields = list_display = ["name","resource","request_method","request_header_status","response_header_status","request_data","response_data"]
+    fields = list_display = ["name","resource","url","request_method","request_header_status","response_header_status","request_data","response_data"]
     def save_model(self, request, obj, form, change):
         obj.request_data = indent(json.dumps(json.loads(obj.request_data),indent=4),8)
         obj.response_data = indent(json.dumps(json.loads(obj.response_data),indent=4),8)

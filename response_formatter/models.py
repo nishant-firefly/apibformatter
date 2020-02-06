@@ -15,8 +15,11 @@ HUB_CHOICES = (
 )
 
 RESPONSE_STATUS_CHOICES=(
-    ("Response 200 (application/json)","Response 200 (application/json)"),
-
+    ("Response 200 (application/json)", "Response 200 (application/json)"),
+    ("Response 201 ", "Response 201 "),
+    ("Response 200 ", "Response 200 "),
+    ("Response 201 (application/json)", "Response 201 (application/json)"),
+    ("Response 422 (application/json)", "Response 422 (application/json)"),
 )
 
 REQUEST_STATUS_CHOICES = (
